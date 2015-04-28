@@ -26,6 +26,5 @@ behavior Fuel_stim(i_sender fuel_raw, const char * fileName)
 			fsd.vol = vol;
 			fuel_raw.send(&fsd, sizeof(fsd));
 		}
-		
 	}
 };

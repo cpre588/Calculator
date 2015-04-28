@@ -15,7 +15,7 @@ behavior Alt_stim(i_sender alt_raw, const char * fileName)
 		if (fin == NULL)
 		{
 			printf("Fuel Input File Missing!\n");
-			return;
+			return -1;
 		}
 
 		while (1)

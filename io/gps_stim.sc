@@ -15,11 +15,12 @@ behavior GPS_stim (i_sender gps_raw, const char * file_name) {
   
 		if (fin == NULL) {
 			printf("GPS Input File Missing!\n");
-			return -1;
+			return;
 		}
 
 		while (1) {
-			fscanf(fin,"%u,%lf,%c,%lf,%c\n", &timestamp, &latitude, &ns, &longitude, &ew);
+			if (fscanf(fin,"%u,%lf,%c,%lf,%c\n", &timestamp, &latitude, &ns, &longitude, &ew) == EOF)
+				 break;
 
 			sd.ts = timestamp;
 			sd.lat = latitude;
@@ -30,7 +31,6 @@ behavior GPS_stim (i_sender gps_raw, const char * file_name) {
 			gpas_raw.send(&sd, sizeof(sd));
 		}
 
-		return;
 	}
 
-}
+};
