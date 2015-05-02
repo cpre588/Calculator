@@ -7,12 +7,14 @@ behavior GPS_stim (i_sender gps_raw, const char * file_name) {
 	
 	void main(void) {
 	
-		FILE * fin = fopen(file_name, "r");
+		FILE * fin;
 		unsigned int timestamp;
 		double latitude, longitude;
 		char ns, ew;
 		gps_send_data sd;
-  
+
+		fin = fopen(file_name, "r");  
+
 		if (fin == NULL) {
 			printf("GPS Input File Missing!\n");
 			return;
@@ -28,7 +30,7 @@ behavior GPS_stim (i_sender gps_raw, const char * file_name) {
 			sd.lon = longitude;
 			sd.ew = ew;
 
-			gpas_raw.send(&sd, sizeof(sd));
+			gps_raw.send(&sd, sizeof(sd));
 		}
 
 	}
