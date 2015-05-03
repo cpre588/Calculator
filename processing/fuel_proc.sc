@@ -4,7 +4,7 @@ import "c_double_handshake";
 
 #define speed_GPH_ratio 10
 
-behavior Fuel_Proc(i_receiver fuel_raw, i_sender fuel_processed, in double shared_speed)
+behavior Fuel_Proc(i_receiver fuel_raw, i_sender fuel_processed/*, in double shared_speed*/)
 {
 	void main(void)
 	{
@@ -16,7 +16,7 @@ behavior Fuel_Proc(i_receiver fuel_raw, i_sender fuel_processed, in double share
 		{
 			fuel_raw.receive(&fraw, sizeof(fraw));
 
-			currentGPH = shared_speed/speed_GPH_ratio;
+			currentGPH = /*shared_speed/*/speed_GPH_ratio;
 			fproc.time_left = fraw.vol/currentGPH;
 			fproc.fuel_left = fraw.vol;
 			fproc.up_time = fraw.time;

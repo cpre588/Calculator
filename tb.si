@@ -22,7 +22,7 @@ behavior Main
  c_double_handshake alt_stim_sensor, alt_sensor_proc, alt_proc_forward;
  c_double_handshake fuel_stim_sensor, fuel_sensor_proc, fuel_proc_forward;
  c_double_handshake forward_monitor;
- double shared_speed;
+
 
  Gps_Stim B0(gps_stim_sensor, "io/gps.txt");
  Alt_Stim B1(alt_stim_sensor, "io/alt.txt");
@@ -32,9 +32,9 @@ behavior Main
  Alt_Sensor B4(alt_stim_sensor, alt_sensor_proc);
  Fuel_Sensor B5(fuel_stim_sensor, fuel_sensor_proc);
 
- Gps_Proc B6(gps_sensor_proc, gps_proc_forward, shared_speed);
+ Gps_Proc B6(gps_sensor_proc, gps_proc_forward );
  Alt_Proc B7(alt_sensor_proc, alt_proc_forward);
- Fuel_Proc B8(fuel_sensor_proc, fuel_proc_forward, shared_speed);
+ Fuel_Proc B8(fuel_sensor_proc, fuel_proc_forward );
 
  Forward B9(gps_proc_forward, alt_proc_forward, fuel_proc_forward, forward_monitor);
 
