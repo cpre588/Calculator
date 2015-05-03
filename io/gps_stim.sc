@@ -3,7 +3,7 @@
 
 import "i_sender";
 
-behavior GPS_stim (i_sender gps_raw, const char * file_name) {
+behavior Gps_Stim (i_sender gps_raw, const char * file_name) {
 	
 	void main(void) {
 	

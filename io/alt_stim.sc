@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include "../include/types.h"
 
-#import "i_sender";
+import "i_sender";
 
-behavior Alt_stim(i_sender alt_raw, const char * fileName)
+behavior Alt_Stim(i_sender alt_raw, const char * fileName)
 {
 	void main(void)
 	{
-		FILE *fin = fopen(fileName, "r");
+		FILE *fin;
 		unsigned int time;
 		double alt;
 		alt_send_data asd;
 		
+		fin = fopen(fileName, "r");	
+
 		if (fin == NULL)
 		{
 			printf("Fuel Input File Missing!\n");

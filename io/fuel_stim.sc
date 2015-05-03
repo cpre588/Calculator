@@ -3,15 +3,17 @@
 
 #import "i_sender";
 
-behavior Fuel_stim(i_sender fuel_raw, const char * fileName)
+behavior Fuel_Stim(i_sender fuel_raw, const char * fileName)
 {
 	void main(void)
 	{
-		FILE *fin = fopen(fileName, "r");
+		FILE *fin;
 		unsigned int time;
 		double vol;
 		fuel_send_data fsd;
 		
+		fin = fopen(fileName, "r");
+
 		if (fin == NULL)
 		{
 			printf("Fuel Input File Missing!\n");
