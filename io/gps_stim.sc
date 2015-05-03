@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../include/types.h"
 
-import "i_sender";
+import "c_double_handshake";
 
 behavior Gps_Stim (i_sender gpsraw, in const char * filename) {
 	
