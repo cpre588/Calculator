@@ -4,7 +4,7 @@
 
 import "c_double_handshake";
 
-#define lat_adjust(x) 111.0000-1.2333*x
+#define lat_adjust(x) (111.0000-1.2333*x)
 #define lat_diff 111.0000
 
 behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedspeed)
