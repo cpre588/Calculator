@@ -15,7 +15,6 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 		gps_processed gproc;
 		double dlat, dlon, ddis, alat; 
 		unsigned int dtime;
-		double speed;
 
 		prev.ts = 0;
 		prev.lat = 0.0;
@@ -24,8 +23,8 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 		prev.ns	= 'w';
 		
 		// intialize
-		gps_raw.receive(&prev, sizeof(prev));
-		gps_raw.receive(&curr, sizeof(curr));
+		gpsraw.receive(&prev, sizeof(prev));
+		gpsraw.receive(&curr, sizeof(curr));
 
 		while (1) {
 			dlat = (curr.lat-prev.lat)*(curr.lat-prev.lat); // in degrees
@@ -70,10 +69,10 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 				gproc.dir2 = 'e';
 			}
 			
-			gps_processed.send(&gproc, sizeof(gproc));			
+			gpsprocessed.send(&gproc, sizeof(gproc));			
 			
 			prev = curr;
-			gps_raw.receive(&curr, sizeof(curr));
+			gpsraw.receive(&curr, sizeof(curr));
 
 		}
 	}

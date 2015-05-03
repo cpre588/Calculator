@@ -14,14 +14,14 @@ behavior Fuel_Proc(i_receiver fuelraw, i_sender fuelprocessed, in double shareds
 		
 		while (1)
 		{
-			fuel_raw.receive(&fraw, sizeof(fraw));
+			fuelraw.receive(&fraw, sizeof(fraw));
 
 			currentGPH = sharedspeed/speed_GPH_ratio;
 			fproc.time_left = fraw.vol/currentGPH;
 			fproc.fuel_left = fraw.vol;
 			fproc.up_time = fraw.time;
 			
-			fuel_processed.send(&fproc, sizeof(fproc));
+			fuelprocessed.send(&fproc, sizeof(fproc));
 		}
 		
 	}

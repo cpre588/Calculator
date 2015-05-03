@@ -14,8 +14,8 @@ behavior Alt_Proc(i_receiver altraw, i_sender altprocessed)
 		char dir;
 
 		//initialize
-		alt_raw.receive(&prev, sizeof(prev));
-		alt_raw.receive(&curr, sizeof(curr));
+		altraw.receive(&prev, sizeof(prev));
+		altraw.receive(&curr, sizeof(curr));
 
 		while (1) {
 		
@@ -34,10 +34,10 @@ behavior Alt_Proc(i_receiver altraw, i_sender altprocessed)
 				aproc.dir = 's'; // steady
 			}
 
-			alt_processed.send(&aproc, sizeof(aproc));
+			altprocessed.send(&aproc, sizeof(aproc));
 
 			prev = curr;
-			alt_raw.receive(&curr, sizeof(curr));
+			altraw.receive(&curr, sizeof(curr));
 		}
 	}
 
