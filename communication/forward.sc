@@ -30,4 +30,4 @@ behavior Foward(i_receiver gps_processed, i_receiver alt_processed,
 
 	}
 
-}
+};
