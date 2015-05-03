@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Gps_Sensor(i_receiver gps_in, i_sender gps_out)
@@ -12,4 +14,4 @@ behavior Gps_Sensor(i_receiver gps_in, i_sender gps_out)
 			gps_out.send(&gps, sizeof(gps));
 		}
 	}
-}
+};

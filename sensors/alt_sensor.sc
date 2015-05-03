@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Alt_Sensor (i_receiver alt_in, i_sender alt_out)
@@ -14,4 +16,4 @@ behavior Alt_Sensor (i_receiver alt_in, i_sender alt_out)
 
 	}
 
-}
+};

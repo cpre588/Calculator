@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Fuel_Sensor(i_receiver fuel_in, i_sender fuel_out)
@@ -12,4 +14,4 @@ behavior Fuel_Sensor(i_receiver fuel_in, i_sender fuel_out)
 		}
 	}
 
-}
+};

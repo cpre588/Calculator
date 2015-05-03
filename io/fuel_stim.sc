@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../include/types.h"
 
-#import "i_sender";
+import "i_sender";
 
 behavior Fuel_Stim(i_sender fuel_raw, const char * fileName)
 {
