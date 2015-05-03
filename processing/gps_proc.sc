@@ -5,7 +5,7 @@ import "c_double_handshake"
 #define lat_adjust(x) 111.00000000-1.23333333*x
 #define lat_diff 111.00000000
 
-behavior Gps_Proc (i_receiver gps_raw, i_sender gps_processed)
+behavior Gps_Proc (i_receiver gps_raw, i_sender gps_processed, out double shared_speed)
 {
 
 	void main(void)
@@ -41,6 +41,8 @@ behavior Gps_Proc (i_receiver gps_raw, i_sender gps_processed)
 
 			gproc.speed = ddis/dtime;
 			
+			shared_speed = gproc.speed;
+			
 			if (curr.lat > prev.lat && curr.ns == 'n') {
 				gproc.dir1 = 'n';
 			}
@@ -67,8 +69,8 @@ behavior Gps_Proc (i_receiver gps_raw, i_sender gps_processed)
 				gproc.dir2 = 'e';
 			}
 			
-			gps_processed(&gproc, sizeof(gproc));			
-				
+			gps_processed.send(&gproc, sizeof(gproc));			
+			
 			prev = curr;
 			gps_raw.receive(&curr, sizeof(curr));
 
