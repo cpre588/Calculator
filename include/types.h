@@ -26,6 +26,7 @@ typedef struct fuel_send_data_t {
 } fuel_send_data;
 
 typedef struct fuel_processed_t {
+	unsigned int up_time;
 	double time_left;
 	double fuel_left;
 } fuel_processed;
