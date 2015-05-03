@@ -28,6 +28,6 @@ behavior Fuel_Stim(i_sender fuelraw, in const char * fileName)
 			fsd.vol = vol;
 			fuelraw.send(&fsd, sizeof(fsd));
 		}
-		
+		printf("WAITING FOR FUEL DATA...\n");
 	}
 };
