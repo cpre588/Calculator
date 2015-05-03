@@ -1,4 +1,5 @@
 #include "../include/types.h"
+#include <stdio.h>
 
 import "c_double_handshake";
 
@@ -12,6 +13,7 @@ behavior Gps_Sensor(i_receiver gps_in, i_sender gps_out)
 		while (1) {
 			gps_in.receive(&gps, sizeof(gps));
 			gps_out.send(&gps, sizeof(gps));
+			printf("GET FUCKED\n");
 		}
 	}
 };
