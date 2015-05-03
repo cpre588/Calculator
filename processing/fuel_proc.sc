@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 #define speed_GPH_ratio 10

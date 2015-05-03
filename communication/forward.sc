@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Foward(i_receiver gps_processed, i_receiver alt_processed,

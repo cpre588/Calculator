@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Alt_Proc(i_receiver alt_raw, i_sender alt_processed)

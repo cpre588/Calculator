@@ -1,3 +1,5 @@
+#include "../include/types.h"
+
 import "c_double_handshake";
 
 behavior Monitor(i_receiver foward_data)
