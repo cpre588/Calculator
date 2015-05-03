@@ -31,6 +31,7 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 			dlat = (curr.lat-prev.lat)*(curr.lat-prev.lat); // in degrees
 			dlon = (curr.lon-prev.lon)*(curr.lon-prev.lon); // in degrees
 			alat = (curr.lat+prev.lat)/2; // average latitude			
+			printf("alat = %f\n", alat);
 			dlat = dlat*lat_diff; // in km
 			dlon = dlon*lat_adjust(alat); // in km
 			printf("dlon = %f, dlat = %f\n", dlon, dlat);
