@@ -28,6 +28,6 @@ behavior Alt_Stim(i_sender altraw, in const char * fileName)
 			asd.alt = alt;
 			altraw.send(&asd, sizeof(asd));
 		}
-
+		printf("WAITING FOR ALTITUDE DATA...\n");
 	}
 };

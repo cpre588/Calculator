@@ -31,7 +31,8 @@ behavior Gps_Stim (i_sender gpsraw, in const char * filename) {
 			sd.ew = ew;
 			gpsraw.send(&sd, sizeof(sd));
 		}
-
+		
+		printf("WAITING FOR GPS DATA...\n");
 	}
 
 };
