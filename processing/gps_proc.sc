@@ -39,7 +39,7 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 			ddis = sqrt(dlon); // distance between two points
 	
 			dtime = curr.ts-prev.ts;
-
+			printf("%f/%f=%f\n", ddis, dtime, ddis/dtime);
 			gproc.speed = ddis/dtime;
 			
 			sharedspeed = gproc.speed;
