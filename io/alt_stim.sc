@@ -26,7 +26,9 @@ behavior Alt_Stim(i_sender altraw, in const char * fileName)
 				break;
 			asd.time = time;
 			asd.alt = alt;
+			printf("before alt send\n");
 			altraw.send(&asd, sizeof(asd));
+			printf("after alt send\n");
 		}
 
 	}
