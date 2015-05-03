@@ -41,6 +41,7 @@ behavior Main
 			B0.main();
 			B1.main();
 			B2.main();
+			B3.main();
 			B4.main();
 			B5.main();
 			B6.main();
