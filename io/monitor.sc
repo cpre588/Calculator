@@ -1,6 +1,6 @@
 #include "../include/types.h"
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 
 import "c_double_handshake";
 
