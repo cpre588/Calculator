@@ -3,7 +3,7 @@
 
 import "i_sender";
 
-behavior Gps_Stim (i_sender gps_raw, const char * file_name) {
+behavior Gps_Stim (i_sender gpsraw, in const char * filename) {
 	
 	void main(void) {
 	
@@ -13,7 +13,7 @@ behavior Gps_Stim (i_sender gps_raw, const char * file_name) {
 		char ns, ew;
 		gps_send_data sd;
 
-		fin = fopen(file_name, "r");  
+		fin = fopen(filename, "r");  
 
 		if (fin == NULL) {
 			printf("GPS Input File Missing!\n");
@@ -30,7 +30,7 @@ behavior Gps_Stim (i_sender gps_raw, const char * file_name) {
 			sd.lon = longitude;
 			sd.ew = ew;
 
-			gps_raw.send(&sd, sizeof(sd));
+			gpsraw.send(&sd, sizeof(sd));
 		}
 
 	}

@@ -3,7 +3,7 @@
 
 import "i_sender";
 
-behavior Fuel_Stim(i_sender fuel_raw, const char * fileName)
+behavior Fuel_Stim(i_sender fuelraw, in const char * fileName)
 {
 	void main(void)
 	{
@@ -26,7 +26,7 @@ behavior Fuel_Stim(i_sender fuel_raw, const char * fileName)
 				break;
 			fsd.time = time;
 			fsd.vol = vol;
-			fuel_raw.send(&fsd, sizeof(fsd));
+			fuelraw.send(&fsd, sizeof(fsd));
 		}
 		
 	}

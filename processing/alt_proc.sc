@@ -9,9 +9,8 @@ behavior Alt_Proc(i_receiver altraw, i_sender altprocessed)
 	{
 		alt_send_data curr, prev;
 		alt_processed aproc;
-		double dalt, speed;
+		double dalt;
 		unsigned int dtime; 
-		char dir;
 
 		//initialize
 		altraw.receive(&prev, sizeof(prev));

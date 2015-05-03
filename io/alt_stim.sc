@@ -3,7 +3,7 @@
 
 import "i_sender";
 
-behavior Alt_Stim(i_sender alt_raw, const char * fileName)
+behavior Alt_Stim(i_sender altraw, in const char * fileName)
 {
 	void main(void)
 	{
@@ -26,7 +26,7 @@ behavior Alt_Stim(i_sender alt_raw, const char * fileName)
 				break;
 			asd.time = time;
 			asd.alt = alt;
-			alt_raw.send(&asd, sizeof(asd));
+			altraw.send(&asd, sizeof(asd));
 		}
 
 	}

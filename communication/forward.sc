@@ -2,8 +2,8 @@
 
 import "c_double_handshake";
 
-behavior Foward(i_receiver gps_processed, i_receiver alt_processed,
-		i_receiver fuel_processed, i_sender forward_data)
+behavior Forward(i_receiver gpsprocessed, i_receiver altprocessed,
+		i_receiver fuelprocessed, i_sender forwarddata)
 {
 	
 	void main(void)
@@ -15,9 +15,9 @@ behavior Foward(i_receiver gps_processed, i_receiver alt_processed,
 
 		while(1)
 		{
-			gps_processed.receive(&gps, sizeof(gps));
-			alt_processed.receive(&alt, sizeof(alt));
-			fuel_processed.receive(&fuel, sizeof(fuel));
+			gpsprocessed.receive(&gps, sizeof(gps));
+			altprocessed.receive(&alt, sizeof(alt));
+			fuelprocessed.receive(&fuel, sizeof(fuel));
 			
 			data.gps_speed = gps.speed;
 			data.gps_dir1 = gps.dir1;
@@ -27,7 +27,7 @@ behavior Foward(i_receiver gps_processed, i_receiver alt_processed,
 			data.fuel_time_left = fuel.time_left;
 			data.fuel_fuel_left = fuel.fuel_left;
 
-			forward_data.send(&data, sizeof(data));	
+			forwarddata.send(&data, sizeof(data));	
 		}
 
 	}
