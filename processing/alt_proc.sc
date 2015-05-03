@@ -2,7 +2,7 @@
 
 import "c_double_handshake";
 
-behavior Alt_Proc(i_receiver alt_raw, i_sender alt_processed)
+behavior Alt_Proc(i_receiver altraw, i_sender altprocessed)
 {
 	
 	void main(void) 

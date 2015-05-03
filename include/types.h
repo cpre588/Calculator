@@ -1,3 +1,5 @@
+#ifndef __TYPES
+#define __TYPES
 typedef struct gps_send_data_t {
 	unsigned int ts;
 	double lat, lon;
@@ -39,3 +41,4 @@ typedef struct forward_data_t {
 	double fuel_time_left;
 	double fuel_fuel_left;
 } forward_data;
+#endif
