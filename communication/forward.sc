@@ -27,9 +27,7 @@ behavior Forward(i_receiver gpsprocessed, i_receiver altprocessed,
 			data.alt_dir = alt.dir;
 			data.fuel_time_left = fuel.time_left;
 			data.fuel_fuel_left = fuel.fuel_left;
-			printf("before forward send\n");
 			forwarddata.send(&data, sizeof(data));
-			printf("after forward send\n");	
 		}
 
 	}

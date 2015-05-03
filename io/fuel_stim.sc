@@ -26,9 +26,7 @@ behavior Fuel_Stim(i_sender fuelraw, in const char * fileName)
 				break;
 			fsd.time = time;
 			fsd.vol = vol;
-			printf("before fuel send\n");
 			fuelraw.send(&fsd, sizeof(fsd));
-			printf("after fuel send\n");
 		}
 		
 	}

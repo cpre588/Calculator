@@ -29,9 +29,7 @@ behavior Gps_Stim (i_sender gpsraw, in const char * filename) {
 			sd.ns = ns;
 			sd.lon = longitude;
 			sd.ew = ew;
-			printf("before gps send\n");
 			gpsraw.send(&sd, sizeof(sd));
-			printf("after gps send\n");
 		}
 
 	}

@@ -24,11 +24,8 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 		prev.ns	= 'w';
 		
 		// intialize
-		printf("before gps_proc receive 1\n");
 		gpsraw.receive(&prev, sizeof(prev));
-		printf("between gps_proc receive 1,2\n");
 		gpsraw.receive(&curr, sizeof(curr));
-		printf("after gps_proc receives\n");
 
 		while (1) {
 			dlat = (curr.lat-prev.lat)*(curr.lat-prev.lat); // in degrees
