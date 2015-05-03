@@ -31,19 +31,12 @@ behavior Gps_Proc (i_receiver gpsraw, i_sender gpsprocessed, out double sharedsp
 			dlat = (curr.lat-prev.lat)*(curr.lat-prev.lat); // in degrees
 			dlon = (curr.lon-prev.lon)*(curr.lon-prev.lon); // in degrees
 			alat = (curr.lat+prev.lat)/2; // average latitude			
-			printf("dlon = %f, dlat = %f\n", dlon, dlat);
-			printf("alat = %f\n", alat);
 			dlat = dlat*lat_diff; // in km
 			dlon = dlon*lat_adjust(alat); // in km
-			printf("dlon = %f, dlat = %f\n", dlon, dlat);
 			dlon = dlat+dlon; // recycle dlon for total dist
-			printf("dlat+dlon = %f\n", dlon);
 			ddis = sqrt(dlon); // distance between two points
-			printf("ddis = %f\n", ddis);
 			dtime = curr.ts-prev.ts;
-			printf("dtime = %u\n", dtime);
 			gproc.speed = ddis/((double) dtime);
-			printf("speed = %f\n", gproc.speed);	
 			sharedspeed = gproc.speed;
 			
 			if (curr.lat > prev.lat && curr.ns == 'n') {
