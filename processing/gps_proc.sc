@@ -2,10 +2,7 @@
 
 import "c_double_handshake"
 
-static inline double lat_adjust(double x)
-{
-	return 111.0000-1.2333*x;
-}
+#define lat_adjust(x) 111.0000-1.2333*x
 
 const double lat_diff 111.0000;
 

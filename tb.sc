@@ -51,4 +51,4 @@ behavior Main
 		}
 		return 0;
 	}
-}
+};
