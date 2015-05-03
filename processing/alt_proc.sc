@@ -20,7 +20,7 @@ behavior Alt_Proc(i_receiver alt_raw, i_sender alt_processed)
 			dalt = curr.alt - prev.alt;
 			dtime = curr.time - prev.time;
 
-			aproc.delta_alt = dalt/dtime;
+			aproc.delta_alt = dalt/dtime; // actually rate of change
 			
 			if (curr.alt > prev.alt) {
 				aproc.dir = 'u'; // up
@@ -31,6 +31,11 @@ behavior Alt_Proc(i_receiver alt_raw, i_sender alt_processed)
 			else {
 				aproc.dir = 's'; // steady
 			}
+
+			alt_processed.send(&aproc, sizeof(aproc));
+
+			prev = curr;
+			alt_raw.receive(&curr, sizeof(curr));
 		}
 	}
 
