@@ -9,6 +9,7 @@ import "processing/alt_proc";
 import "processing/fuel_proc";
 import "communication/forward";
 import "io/monitor";
+import "design";
 import "c_double_handshake";
 
 behavior Main
