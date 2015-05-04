@@ -5,6 +5,7 @@ import "sensors/fuel_sensor";
 import "processing/gps_proc";
 import "processing/alt_proc";
 import "processing/fuel_proc";
+import "communication/forward";
 
 behavior Design(i_receiver gps_stim, i_receiver alt_stim, i_receiver fuel_stim, i_sender to_monitor)
 {
