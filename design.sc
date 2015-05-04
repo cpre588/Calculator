@@ -1,4 +1,10 @@
 import "c_double_handshake";
+import "sensors/gps_sensor";
+import "sensors/alt_sensor";
+import "sensors/fuel_sensor";
+import "processing/gps_proc";
+import "processing/alt_proc";
+import "processing/fuel_proc";
 
 behavior Design(i_receiver gps_stim, i_receiver alt_stim, i_receiver fuel_stim, i_sender to_monitor)
 {
